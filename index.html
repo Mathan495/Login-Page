@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            background: #3F5EFB;
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgb(14, 9, 10) 100%);
+            font-family: 'poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            background-color: whitesmoke;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            margin: 70px 0 auto;
+        }
+        @media all and (max-width: 500px){
+            .container{
+                width: 300px;
+            }
+            .labels input{
+                width: 230px;
+            }
+        }
+        h2 {
+            text-align: center;
+            color: rgba(63, 94, 251, 1);
+            margin-bottom: 15px;
+        }
+
+        #form button {
+            background: #3F5EFB;
+            padding: 7px 10px;
+            border: none;
+            border-radius: 5px;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+            margin: 20px 0;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .labels {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+
+        input {
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid rgba(63, 94, 251, 1);
+            width: 260px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .labels .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .labels.correct input {
+            border-color: #0cc477;
+        }
+
+        .labels.error input {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <h2>Register</h2>
+            <div class="labels">
+                <label for="Username">Username</label>
+                <input type="text" id="username" name="username">
+                <div class="error"></div>
+            </div>
+            <div class="labels">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <div class="error"></div>
+            </div>
+            <div class="labels">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <div class="error"></div>
+            </div>
+            <div class="labels">
+                <label for="Username">Confirm Password</label>
+                <input type="password" id="cpassword" name="cpassword">
+                <div class="error"></div>
+            </div>
+            <button class="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+<script src="script.js"></script>
+<!-- <script>
+    const form = document.querySelector("#form")
+    const names = document.getElementById("username")
+    const psrd = document.getElementById("password")
+    const mails = document.getElementById("email")
+    const confpsd = document.getElementById("cpassword")
+
+    form.addEventListener("submit" , (e) => {
+        e.preventDefault();
+        validateInpval();
+    })
+
+    function validateInpval(){
+        const user = names.value.trim();
+        const passwd = psrd.value.trim();
+        const mailid = mails.value.trim();
+        const cpsd = confpsd.value.trim();
+
+        if(user === ''){
+            seterror(names,'please enter valid name')
+        }
+        else{
+            setsucs(names)
+        }
+
+        if(passwd === ''){
+            seterror(psrd,'enter valid password')
+        }
+        else{
+            setsucs(psrd)
+        }
+        if(mailid=== ''){
+            seterror(mails,'enter valid email')
+        }
+        else{
+            setsucs(mails)
+        }
+        if(cpsd === ''){
+            seterror(confpsd,'enter correct password')
+        }
+        else{
+            setsucs(confpsd)
+        }
+    }
+
+    function seterror(el,msg){
+        const labelelem = el.parentElement;
+        const errelem = labelelem.querySelector(".error")
+
+        errelem.innerText = msg;
+
+        labelelem.classList.add("error")
+        labelelem.classList.remove("correct")
+    }
+
+    function setsucs(el,msg){
+        const labelelem = el.parentElement;
+        const errelem = labelelem.querySelector(".error")
+
+        errelem.innerText = '';
+
+        labelelem.classList.remove("error")
+        labelelem.classList.add("correct")
+    }
+</script> -->
+</html>
